@@ -37,11 +37,11 @@ export async function GET(req: NextRequest) {
       !referer.includes("/api/") &&
       !referer.includes("localhost") &&
       !referer.includes("http://192.168.1.6:3000/") &&
-      !referer.includes("https://www.zxcstream.xyz/")
+      !referer.includes("https://www.zxcprime.icu/")
     ) {
       return NextResponse.json(
         { success: true, type: "hls", link: "www.zxcprime.icu" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
@@ -81,7 +81,7 @@ export async function GET(req: NextRequest) {
         },
         cache: "no-store",
       },
-      5000
+      5000,
     );
 
     if (!upstream.ok)
@@ -105,7 +105,7 @@ export async function GET(req: NextRequest) {
       const rewritten = rewriteM3U8(
         playlist,
         target,
-        req.nextUrl.origin + req.nextUrl.pathname
+        req.nextUrl.origin + req.nextUrl.pathname,
       );
 
       return new NextResponse(rewritten, {
