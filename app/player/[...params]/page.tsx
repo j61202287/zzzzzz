@@ -55,7 +55,6 @@ export default function Player() {
   const episode = Number(params?.[3]) || 1;
   const containerRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
-  const backButton = searchParams.get("back");
   const [loaded, setLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isMobile = useIsMobile();

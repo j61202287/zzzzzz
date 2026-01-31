@@ -6,14 +6,10 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 export default function MainPlayerModal() {
   const [open, setOpen] = useState(true);
-  const router = useRouter();
-
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent showCloseButton={false}>
@@ -24,7 +20,7 @@ export default function MainPlayerModal() {
             account and remove your data from our servers.
           </DialogDescription>
         </DialogHeader>
-        <ModalPlayerMain setOpen={setOpen} />
+        <ModalPlayerMain />
       </DialogContent>
     </Dialog>
   );
