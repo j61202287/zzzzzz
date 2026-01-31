@@ -1,4 +1,4 @@
-import { encodeBase64Url } from "@/lib/base64";
+
 import { fetchWithTimeout } from "@/lib/fetch-timeout";
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
