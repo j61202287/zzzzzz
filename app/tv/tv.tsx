@@ -42,7 +42,7 @@ import { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import TitleReusable from "@/components/ui/title";
-import useGetDiscoverInfinite from "@/api/get-discover-infinite";
+import useGetDiscoverInfinite from "@/hook/get-discover-infinite";
 import { MovieTypes } from "@/types/movie-by-id";
 import { useInView } from "react-intersection-observer";
 import { Skeleton } from "@/components/ui/skeleton";

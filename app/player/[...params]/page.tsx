@@ -5,7 +5,7 @@ import "ldrs/react/Tailspin.css";
 
 import { ArrowRight, Settings, Volume2, VolumeX } from "lucide-react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import useMovieById from "@/api/get-movie-by-id";
+import useMovieById from "@/hook/get-movie-by-id";
 import { AnimatePresence, motion } from "framer-motion";
 import { getStatusLabel } from "./hooks/SERVER-LABELS";
 import { Slider } from "@/components/ui/slider";

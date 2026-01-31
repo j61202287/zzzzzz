@@ -17,7 +17,7 @@ import SkeletonLanding from "./skeleton";
 import LandingContent from "./content";
 import { useRef, useState } from "react";
 import { CustomListItem } from "@/types/landing-types";
-import useMovieById from "@/api/get-movie-by-id";
+import useMovieById from "@/hook/get-movie-by-id";
 export default function LandingPage({
   custom_list,
 }: {

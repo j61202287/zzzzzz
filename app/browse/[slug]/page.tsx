@@ -2,7 +2,7 @@
 import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import MovieCard from "@/components/ui/movie-card";
-import useGetDiscoverInfinite from "@/api/get-discover-infinite";
+import useGetDiscoverInfinite from "@/hook/get-discover-infinite";
 import { MovieTypes } from "@/types/movie-by-id";
 import { useInView } from "react-intersection-observer";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";

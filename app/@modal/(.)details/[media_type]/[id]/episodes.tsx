@@ -1,4 +1,4 @@
-import { useTvSeason } from "@/api/get-seasons";
+import { useTvSeason } from "@/hook/get-seasons";
 import { Button } from "@/components/ui/button";
 import { IMAGE_BASE_URL } from "@/constants/tmdb";
 import { useSeasonStore } from "@/store/season";

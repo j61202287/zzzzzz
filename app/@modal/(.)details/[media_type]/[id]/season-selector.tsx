@@ -1,4 +1,4 @@
-import { useTvSeason } from "@/api/get-seasons";
+import { useTvSeason } from "@/hook/get-seasons";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -76,7 +76,7 @@ export default function SeasonSelector({
                       "ml-auto",
                       seasonSelect.number === season.season_number
                         ? "opacity-100"
-                        : "opacity-0"
+                        : "opacity-0",
                     )}
                   />
                 </CommandItem>

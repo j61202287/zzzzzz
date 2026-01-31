@@ -1,4 +1,4 @@
-import useSearch from "@/api/get-search";
+import useSearch from "@/hook/get-search";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Tabs } from "@/components/ui/vercel-tabs";
 import { useSearchParams } from "next/navigation";
@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 import MovieCard from "@/components/ui/movie-card";
 import { MovieTypes } from "@/types/movie-by-id";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import useGetDiscoverSearch from "@/api/get-discover-search";
+import useGetDiscoverSearch from "@/hook/get-discover-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import SkeletonCard1 from "@/components/ui/movie-card-skeleton-1";
 import SkeletonCard2 from "@/components/ui/movie-card-skeleton-2";

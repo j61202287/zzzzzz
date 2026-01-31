@@ -16,7 +16,7 @@ import { useIsMobile } from "@/hook/use-mobile";
 import { MovieTypes } from "@/types/movie-by-id";
 import { ReusableSwiperTypes } from "@/constants/movie-endpoints";
 import { Button } from "@/components/ui/button";
-import useGetDiscoverInfiniteSwiper from "@/api/get-discover-infinite swiper";
+import useGetDiscoverInfiniteSwiper from "@/hook/get-discover-infinite swiper";
 
 export default function ReusableSwiper({
   id,

@@ -1,5 +1,5 @@
 "use client";
-import useMovieById from "@/api/get-movie-by-id";
+import useMovieById from "@/hook/get-movie-by-id";
 import {
   Drawer,
   DrawerContent,

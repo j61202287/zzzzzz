@@ -9,7 +9,7 @@ import {
   TextSearch,
   X,
 } from "lucide-react";
-import { useTvSeason } from "@/api/get-seasons";
+import { useTvSeason } from "@/hook/get-seasons";
 import { Tailspin } from "ldrs/react";
 import "ldrs/react/Tailspin.css";
 import Link from "next/link";
