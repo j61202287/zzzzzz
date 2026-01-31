@@ -10,6 +10,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { shuffleArray } from "@/lib/shuffle";
 import { useMemo } from "react";
 import ContinueWatching from "./continue-watching";
+import Footer from "./footer";
 export default function Home() {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
@@ -104,7 +105,7 @@ export default function Home() {
           </>
         )}
       </AnimatePresence>
-
+      <Footer />
       <ScrollToTop />
     </>
   );

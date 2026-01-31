@@ -1,4 +1,3 @@
-
 import { fetchWithTimeout } from "@/lib/fetch-timeout";
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
@@ -51,16 +50,15 @@ export async function GET(req: NextRequest) {
 
     const sourceLink =
       media_type === "tv"
-        ? `https://api.madplay.site/api/movies/holly?id=${id}&season=${season}&episode=${episode}&type=series`
-        : `https://api.madplay.site/api/movies/holly?id=${id}&type=movie`;
-
+        ? `https://api.madplay.site/api/movies/holly?id=${id}&season=${season}&episode=${episode}&type=series&token=thestupidthings`
+        : `https://api.madplay.site/api/movies/holly?id=${id}&type=movie&token=thestupidthings`;
+    //api.madplay.site/api/movies/holly?id=629542&type=movie&token=thestupidthings
     // const res = await fetch(sourceLink, {
     //   headers: {
     //     "User-Agent": "Mozilla/5.0",
     //     Referer: "https://uembed.xyz/",
     //   },
     // });
-
     const res = await fetchWithTimeout(
       sourceLink,
       {

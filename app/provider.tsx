@@ -75,7 +75,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
           <NavBar />
           <MobileNavBar />
           <div>{children}</div>
-          <Footer />
+         
           <Toaster />
         </ThemeProvider>
       )}
