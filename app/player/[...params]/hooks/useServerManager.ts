@@ -53,7 +53,7 @@ export function useServerManager({
       desc: "",
     },
     {
-      name: "Orion (4K) IV",
+      name: "Orion IV",
       server: 3,
       status: "queue",
       desc: "",

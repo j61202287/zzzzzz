@@ -70,11 +70,21 @@ export async function GET(req: NextRequest) {
       5000,
     );
     if (!pathLinkResponse.ok) {
+      const txt = await pathLinkResponse.text();
+      console.error("videasy status:", pathLinkResponse.status);
+      console.error("videasy body:", txt.slice(0, 300));
+
       return NextResponse.json(
-        { success: false, error: "Upstream request failed" },
+        {
+          success: false,
+          error: "pathLinkResponse Upstream request failed",
+          status: pathLinkResponse.status,
+          body: txt.slice(0, 200),
+        },
         { status: pathLinkResponse.status },
       );
     }
+
     const encrypted = await pathLinkResponse.text();
 
     const decrypted = await fetchWithTimeout(

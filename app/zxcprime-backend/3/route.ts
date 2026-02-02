@@ -68,12 +68,23 @@ export async function GET(req: NextRequest) {
       },
       5000,
     );
+
     if (!pathLinkResponse.ok) {
+      const txt = await pathLinkResponse.text();
+      console.error("videasy status:", pathLinkResponse.status);
+      console.error("videasy body:", txt.slice(0, 300));
+
       return NextResponse.json(
-        { success: false, error: "pathLinkResponse Upstream request failed" },
+        {
+          success: false,
+          error: "pathLinkResponse Upstream request failed",
+          status: pathLinkResponse.status,
+          body: txt.slice(0, 200),
+        },
         { status: pathLinkResponse.status },
       );
     }
+
     const encrypted = await pathLinkResponse.text();
 
     const decrypted = await fetchWithTimeout(
@@ -93,7 +104,6 @@ export async function GET(req: NextRequest) {
     }
 
     const decryptedData = await decrypted.json();
-    console.log("decryptedData", decryptedData);
     const sources = decryptedData.result.sources;
 
     if (!Array.isArray(sources) || sources.length === 0) {
@@ -126,7 +136,7 @@ export async function GET(req: NextRequest) {
         { status: 502 },
       );
     }
-    const proxiedUrl = `${proxies[0]}?m3u8-proxy=${finalM3u8}`;
+    const proxiedUrl = `${workingProxy}?m3u8-proxy=${finalM3u8}`;
 
     return NextResponse.json({
       success: 200,
@@ -144,7 +154,16 @@ export async function getWorkingProxy(url: string, proxies: string[]) {
   for (const proxy of proxies) {
     try {
       const testUrl = `${proxy}?m3u8-proxy=${url}`;
-      const res = await fetchWithTimeout(testUrl, { method: "HEAD" }, 3000);
+      const res = await fetchWithTimeout(
+        testUrl,
+        {
+          method: "HEAD",
+          headers: {
+            Range: "bytes=0-1",
+          },
+        },
+        3000,
+      );
       if (res.ok) return proxy;
     } catch (e) {
       // ignore failed proxy
