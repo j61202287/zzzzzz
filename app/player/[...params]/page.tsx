@@ -259,7 +259,7 @@ export default function Player() {
     if (!isEnded) return;
 
     if (canNext) {
-      router.push(`/player/tv/${id}/${nextSeason}/${nextEpisode}`);
+      router.push(`/watch/tv/${id}/${nextSeason}/${nextEpisode}`);
     }
   }, [isEnded]);
   useEffect(() => {
