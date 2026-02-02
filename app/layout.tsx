@@ -36,6 +36,7 @@ export default function RootLayout({
   player: React.ReactNode;
   search: React.ReactNode;
 }>) {
+  const isProduction = process.env.NODE_ENV === "production";
   return (
     <html lang="en">
       <body
@@ -60,11 +61,13 @@ export default function RootLayout({
             `,
             }}
           />
-          {/* <Script
-          src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
-          strategy="beforeInteractive"
-          disable-devtool-auto=""
-        /> */}
+          {isProduction && (
+            <Script
+              src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"
+              strategy="beforeInteractive"
+              disable-devtool-auto=""
+            />
+          )}
           <meta name="apple-mobile-web-app-title" content="ZXC" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta

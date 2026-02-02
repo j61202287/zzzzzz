@@ -8,18 +8,18 @@ export const swiperConfigBackdrop = {
   modules: [Navigation, Pagination, Keyboard, Scrollbar],
   breakpoints: {
     0: {
-      slidesPerView: 2,
+      slidesPerView: 1.5,
       slidesPerGroup: 2,
       spaceBetween: 0,
     },
     640: {
-      slidesPerView: 4,
-      slidesPerGroup: 4,
+      slidesPerView: 3,
+      slidesPerGroup: 3,
       spaceBetween: 12,
     },
     768: {
-      slidesPerView: 5,
-      slidesPerGroup: 5,
+      slidesPerView: 4,
+      slidesPerGroup: 4,
       spaceBetween: 15,
     },
     1024: {

@@ -10,8 +10,9 @@ export const useAdLinkStore = create<{
   openAd: () => boolean;
 }>(() => ({
   openAd: () => {
+    const isProduction = process.env.NODE_ENV === "production";
     const { adToggle } = useAdToggle.getState();
-    if (adToggle === "off") return false;
+    if (adToggle === "off" || !isProduction) return false;
 
     const now = Date.now();
     const last = Number(sessionStorage.getItem("lastAdTime") ?? 0);
