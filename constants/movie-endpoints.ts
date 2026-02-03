@@ -1,5 +1,5 @@
 import netflix from "@/assets/netflix.svg";
-import amazon from "@/assets/amazon-studios.png";
+import amazon from "@/assets/amazon-mgm.webp";
 import disney from "@/assets/disney.svg";
 import hbo from "@/assets/hbo.svg";
 import apple from "@/assets/apple.svg";
@@ -86,22 +86,28 @@ export const COMPANIES: ReusableSwiperTypes[] = [
     },
   },
   {
-    id: "amazon",
-    displayName: "Amazon Studios",
+    id: "amazon-mgm-studios",
+    displayName: "Amazon MGM Studios",
     logo: amazon,
-    type: "tv",
+    type: "movie",
     invert: true,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_companies: 210099,
+      sort_by: "popularity.desc",
+    },
   },
   {
-    id: "disney+",
+    id: "disney-plus",
     displayName: "Disney+",
     logo: disney,
     type: "tv",
     invert: false,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_networks: 2739,
+      sort_by: "popularity.desc",
+    },
   },
   {
     id: "hbo",
@@ -110,7 +116,10 @@ export const COMPANIES: ReusableSwiperTypes[] = [
     type: "tv",
     invert: true,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_networks: 49,
+      sort_by: "popularity.desc",
+    },
   },
   {
     id: "apple",
@@ -119,42 +128,57 @@ export const COMPANIES: ReusableSwiperTypes[] = [
     type: "tv",
     invert: true,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_networks: 2552,
+      sort_by: "popularity.desc",
+    },
   },
   {
     id: "vivamax",
     displayName: "Vivamax",
     logo: vivamax,
-    type: "tv",
+    type: "movie",
     invert: false,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_companies: 149142,
+      sort_by: "popularity.desc",
+    },
   },
   {
     id: "marvel",
     displayName: "Marvel Studios",
     logo: marvell,
-    type: "studio",
+    type: "movie",
     invert: true,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_companies: 420,
+      sort_by: "popularity.desc",
+    },
   },
   {
     id: "a24",
     displayName: "A24",
     logo: a24,
-    type: "studio",
+    type: "movie",
     invert: true,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_companies: 41077,
+      sort_by: "popularity.desc",
+    },
   },
   {
     id: "blumhouse",
     displayName: "Blumhouse",
     logo: blumhouse,
-    type: "studio",
+    type: "movie",
     invert: true,
     endpoint: "discover",
-    params: {},
+    params: {
+      with_companies: 3172,
+      sort_by: "popularity.desc",
+    },
   },
 ];
