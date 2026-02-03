@@ -91,8 +91,9 @@ export default function Home() {
           </motion.div>
         ) : (
           <>
-            <ContinueWatching />
             <StreamProviders />
+            <ContinueWatching />
+
             {movie_endpoints.map((tv) => (
               <ReusableSwiper
                 key={tv.id}

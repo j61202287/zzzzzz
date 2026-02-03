@@ -1,7 +1,6 @@
 import { Navigation, Pagination, Keyboard, Scrollbar } from "swiper/modules";
 
 export const swiperConfig = {
-  spaceBetween: 20,
   navigation: true,
   keyboard: { enabled: true },
   scrollbar: { el: ".swiper-scrollbar", hide: false },
@@ -35,7 +34,7 @@ export const swiperConfig = {
     1280: {
       slidesPerView: 7,
       slidesPerGroup: 7,
-      spaceBetween: 20,
+      spaceBetween: 0,
     },
   },
 };

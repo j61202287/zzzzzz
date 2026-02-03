@@ -9,8 +9,8 @@ export default function SkeletonLanding({
   const isMobile = useIsMobile();
   return (
     <div
-      className={`relative overflow-hidden bg-background transition-[max-height] duration-300 ease-out lg:h-screen h-[70vh]
-    ${isSearching ? "max-h-0" : "lg:max-h-screen max-h-[70vh]"}`}
+      className={`relative overflow-hidden bg-background transition-[max-height] duration-300 ease-out lg:h-[calc(100vh-125px)] h-[70vh]
+    ${isSearching ? "max-h-0" : "lg:max-h-[calc(100vh-125px)] max-h-[70vh]"}`}
     >
       <div className="absolute lg:w-[85%] w-[95%]  lg:bottom-25 bottom-5 bg-amber-80 -translate-x-1/2 left-1/2 ">
         <motion.div

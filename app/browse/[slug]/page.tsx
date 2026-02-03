@@ -58,7 +58,11 @@ export default function DiscoverResult() {
 
       <div className={`grid ${GRID_CONFIG[density]}`}>
         {filtered?.map((meow) => (
-          <MovieCard key={meow.id} movie={meow} media_type="movie" />
+          <MovieCard
+            key={meow.id}
+            movie={meow}
+            media_type={findEndpoint.type}
+          />
         ))}
         {[...Array(7)].map((_, i) => (
           <SkeletonCard2 pulse={isFetchingNextPage ? true : false} key={i} />

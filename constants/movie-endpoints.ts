@@ -22,47 +22,81 @@ export interface ReusableSwiperTypes {
 }
 export const movie_endpoints: ReusableSwiperTypes[] = [
   {
-    id: "popular-movie",
-    displayName: "Popular",
+    id: "cartoon",
+    displayName: "Cartoon",
     endpoint: "discover",
     type: "movie",
-    params: { sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 6513, // TMDB keyword: cannibalism
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
-
+  {
+    id: "cannibalism",
+    displayName: "Cannibalism",
+    endpoint: "discover",
+    type: "movie",
+    params: {
+      with_keywords: 278235, // TMDB keyword: cannibalism
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
+  },
   {
     id: "zombie",
-    displayName: "Zombie",
+    displayName: "Zombie Apocalypse",
     endpoint: "discover",
     type: "movie",
-    params: { with_keywords: 186565, sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 186565,
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
   {
     id: "found-footage",
-    displayName: "Found Footage Horror",
+    displayName: "Found Footage",
     endpoint: "discover",
     type: "movie",
-    params: { with_keywords: 163053, sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 163053,
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
   {
     id: "psychological-thriller",
     displayName: "Psychological Thrillers",
     endpoint: "discover",
     type: "movie",
-    params: { with_keywords: 12565, sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 12565,
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
   {
     id: "slasher-horror",
     displayName: "Slasher Horror",
     endpoint: "discover",
     type: "movie",
-    params: { with_keywords: 12339, sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 12339,
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
   {
     id: "time-loop",
     displayName: "Time-Loop",
     endpoint: "discover",
     type: "movie",
-    params: { with_keywords: 10854, sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 10854,
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
 
   {
@@ -70,7 +104,11 @@ export const movie_endpoints: ReusableSwiperTypes[] = [
     displayName: "Time Travel",
     endpoint: "discover",
     type: "movie",
-    params: { with_keywords: 4379, sort_by: "popularity.desc" },
+    params: {
+      with_keywords: 4379,
+      sort_by: "vote_average.desc",
+      "vote_count.gte": 200,
+    },
   },
 ];
 export const COMPANIES: ReusableSwiperTypes[] = [

@@ -80,8 +80,8 @@ export default function LandingContent({
 
   return (
     <div
-      className={`relative overflow-hidden bg-background transition-[max-height] duration-300 ease-out lg:h-screen h-[70vh]
-    ${isSearching ? "max-h-0" : "lg:max-h-screen max-h-[70vh]"}`}
+      className={`relative overflow-hidden bg-background transition-[max-height] duration-300 ease-out lg:h-[calc(100vh-125px)] h-[70vh]
+    ${isSearching ? "max-h-0" : "lg:max-h-[calc(100vh-125px)] max-h-[70vh]"}`}
     >
       <AnimatePresence>
         {isActive && (
@@ -162,7 +162,7 @@ export default function LandingContent({
             delay: 0.3,
             ease: "easeOut",
           }}
-          className="absolute flex items-center  lg:bottom-25 bottom-0 left-1/2 -translate-x-1/2 lg:w-[85%] w-[95%]  "
+          className="absolute flex items-center  lg:bottom-20 bottom-0 left-1/2 -translate-x-1/2 lg:w-[85%] w-[95%]  "
         >
           <div className="lg:max-w-[45%] ">
             {isActive && (
