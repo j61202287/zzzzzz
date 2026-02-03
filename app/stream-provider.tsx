@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function StreamProviders() {
   const [loaded, setLoaded] = useState(false);
   return (
-    <div className=" mx-auto lg:w-[85%] w-[95%]  relative lg:p-15 py-8  border-b">
+    <div className=" mx-auto lg:w-[85%] w-[95%]  relative lg:py-15 py-8  border-b ">
       <Swiper {...swiperConfigCompany}>
         {COMPANIES.map((company, i) => (
           <SwiperSlide key={company.id} className="p-1">

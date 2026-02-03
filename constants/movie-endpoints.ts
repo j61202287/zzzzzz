@@ -7,6 +7,7 @@ import vivamax from "@/assets/vivamax.png";
 import marvell from "@/assets/marvell.png";
 import a24 from "@/assets/a24.svg";
 import blumhouse from "@/assets/blumhouse.svg";
+import shudder from "@/assets/shudder.svg";
 import type { StaticImageData } from "next/image";
 export interface ReusableSwiperTypes {
   id: string; // slug used for routing + lookup
@@ -73,6 +74,18 @@ export const movie_endpoints: ReusableSwiperTypes[] = [
   },
 ];
 export const COMPANIES: ReusableSwiperTypes[] = [
+  {
+    id: "shudder",
+    displayName: "Shudder",
+    logo: shudder,
+    type: "movie",
+    invert: false,
+    endpoint: "discover",
+    params: {
+      with_companies: 142877,
+      sort_by: "popularity.desc",
+    },
+  },
   {
     id: "netflix",
     displayName: "Netflix",
