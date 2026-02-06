@@ -1,4 +1,23 @@
-import { IconBrandNetflix } from "@tabler/icons-react";
+import {
+  IconAlertTriangleFilled,
+  IconBiohazardFilled,
+  IconBoltFilled,
+  IconBrandNetflix,
+  IconClockFilled,
+  IconCompassFilled,
+  IconDeviceTvFilled,
+  IconDiamondFilled,
+  IconFileDescriptionFilled,
+  IconGhost2Filled,
+  IconHeartFilled,
+  IconJetpackFilled,
+  IconMap,
+  IconMoodHappyFilled,
+  IconMountainFilled,
+  IconPaletteFilled,
+  IconRadioactiveFilled,
+  IconShieldFilled,
+} from "@tabler/icons-react";
 import {
   Zap,
   Compass,
@@ -25,21 +44,30 @@ import {
   MonitorPlay,
   Landmark,
   CloudMoon,
+  UsersRound,
 } from "lucide-react";
 
 export const movieGenres = [
   {
     name: "Action",
     id: 28,
-    icon: Zap,
+    icon: IconBoltFilled,
     description: "High-energy films with intense sequences",
+    color: "text-red-700 border-red-950",
+    iconColor: "text-red-600",
+  },
+  {
+    name: "Horror",
+    id: 27,
+    icon: IconGhost2Filled,
+    description: "Scary and suspenseful films",
     color: "text-red-700 border-red-950",
     iconColor: "text-red-600",
   },
   {
     name: "Adventure",
     id: 12,
-    icon: Compass,
+    icon: IconMap,
     description: "Exciting journeys and exploration",
     color: "text-orange-700 border-orange-950",
     iconColor: "text-orange-600",
@@ -47,7 +75,7 @@ export const movieGenres = [
   {
     name: "Animation",
     id: 16,
-    icon: Palette,
+    icon: IconPaletteFilled,
     description: "Animated films for all ages",
     color: "text-purple-700 border-purple-950",
     iconColor: "text-purple-600",
@@ -55,7 +83,7 @@ export const movieGenres = [
   {
     name: "Comedy",
     id: 35,
-    icon: Laugh,
+    icon: IconMoodHappyFilled,
     description: "Funny and entertaining movies",
     color: "text-yellow-700 border-yellow-950",
     iconColor: "text-yellow-600",
@@ -63,7 +91,7 @@ export const movieGenres = [
   {
     name: "Crime",
     id: 80,
-    icon: Shield,
+    icon: IconShieldFilled,
     description: "Criminal activities and investigations",
     color: "text-gray-700 border-gray-950",
     iconColor: "text-gray-600",
@@ -71,7 +99,7 @@ export const movieGenres = [
   {
     name: "Documentary",
     id: 99,
-    icon: FileText,
+    icon: IconFileDescriptionFilled,
     description: "Real-life stories and facts",
     color: "text-blue-700 border-blue-950",
     iconColor: "text-blue-600",
@@ -87,7 +115,7 @@ export const movieGenres = [
   {
     name: "Family",
     id: 10751,
-    icon: Users,
+    icon: UsersRound,
     description: "Perfect for family movie nights",
     color: "text-green-700 border-green-950",
     iconColor: "text-green-600",
@@ -103,19 +131,12 @@ export const movieGenres = [
   {
     name: "History",
     id: 36,
-    icon: Clock,
+    icon: IconClockFilled,
     description: "Stories from the past",
     color: "text-amber-700 border-amber-950",
     iconColor: "text-amber-600",
   },
-  {
-    name: "Horror",
-    id: 27,
-    icon: Skull,
-    description: "Scary and suspenseful films",
-    color: "text-red-700 border-red-950",
-    iconColor: "text-red-600",
-  },
+
   {
     name: "Music",
     id: 10402,
@@ -135,7 +156,7 @@ export const movieGenres = [
   {
     name: "Romance",
     id: 10749,
-    icon: Heart,
+    icon: IconDiamondFilled,
     description: "Love stories and relationships",
     color: "text-rose-700 border-rose-950",
     iconColor: "text-rose-600",
@@ -143,7 +164,7 @@ export const movieGenres = [
   {
     name: "Science Fiction",
     id: 878,
-    icon: Rocket,
+    icon: IconJetpackFilled,
     description: "Futuristic and sci-fi themes",
     color: "text-cyan-700 border-cyan-950",
     iconColor: "text-cyan-600",
@@ -151,7 +172,7 @@ export const movieGenres = [
   {
     name: "TV Movie",
     id: 10770,
-    icon: Tv,
+    icon: IconDeviceTvFilled,
     description: "Made-for-television films",
     color: "text-teal-700 border-teal-950",
     iconColor: "text-teal-600",
@@ -159,7 +180,7 @@ export const movieGenres = [
   {
     name: "Thriller",
     id: 53,
-    icon: Thriller,
+    icon: IconAlertTriangleFilled,
     description: "Suspenseful and edge-of-seat films",
     color: "text-red-700 border-red-950",
     iconColor: "text-red-600",
@@ -167,7 +188,7 @@ export const movieGenres = [
   {
     name: "War",
     id: 10752,
-    icon: Swords,
+    icon: IconBiohazardFilled,
     description: "Military conflicts and battles",
     color: "text-stone-700 border-stone-950",
     iconColor: "text-stone-600",
@@ -175,7 +196,7 @@ export const movieGenres = [
   {
     name: "Western",
     id: 37,
-    icon: Mountain,
+    icon: IconMountainFilled,
     description: "Wild west and frontier stories",
     color: "text-orange-700 border-orange-950",
     iconColor: "text-orange-600",

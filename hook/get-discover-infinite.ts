@@ -19,10 +19,11 @@ export default function useGetDiscoverInfinite<T>({
   media_type,
   params,
   isVisible,
+  enable,
 }: ReusableSwiperTypes) {
   return useInfiniteQuery<TMDBResponse<T>>({
     queryKey: ["reusable_infinite", endpoint, media_type, params],
-    enabled: isVisible,
+    enabled: (isVisible && !!isVisible) || (enable && !!enable),
     initialPageParam: 1,
     queryFn: async ({ pageParam = 1 }) => {
       const res = await axios.get(
@@ -33,7 +34,7 @@ export default function useGetDiscoverInfinite<T>({
             page: pageParam,
             ...params,
           },
-        }
+        },
       );
 
       return res.data;

@@ -5,6 +5,7 @@ import {
   House,
   ListChevronsUpDown,
   Settings,
+  Telescope,
   Tv,
 } from "lucide-react";
 import {
@@ -51,13 +52,13 @@ export default function MobileNavBar() {
       <button
         className={`flex items-center justify-center flex-col gap-1 ${pathname === "/settings" ? "text-foreground" : ""}`}
       >
-        <Link href={`/settings`}>
-          <Settings
+        <Link href={`/explore`}>
+          <Telescope
             className="size-6 hover:rotate-90 duration-500 transition"
             strokeWidth={1.8}
           />
         </Link>
-        <h1 className="text-xs tracking-wide font-medium">Settings</h1>
+        <h1 className="text-xs tracking-wide font-medium">Explore</h1>
       </button>
 
       <Popover>
@@ -74,6 +75,11 @@ export default function MobileNavBar() {
           align="start"
           className="grid grid-cols-1 gap-1 p-2 border-0 w-45"
         >
+          <Button variant="secondary" asChild>
+            <Link href={`/settings`}>
+              <Bookmark /> Settings
+            </Link>
+          </Button>
           <Button variant="secondary" asChild>
             <Link href={`/watchlist`}>
               <Bookmark /> Watchlist

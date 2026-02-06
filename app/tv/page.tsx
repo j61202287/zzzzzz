@@ -6,7 +6,8 @@ import SearchResult from "../search-components/search-results";
 import LandingPage from "../landing-components/landing-page";
 import { shuffleArray } from "@/lib/shuffle";
 import { useMemo } from "react";
-import ReusableSection from "../reusable-section";
+import ReusableSection from "../explore/page";
+import BrowseTmdb from "../browse";
 
 export default function Movies() {
   const searchParams = useSearchParams();
@@ -110,7 +111,7 @@ export default function Movies() {
           </motion.div>
         ) : (
           <>
-            <ReusableSection media_type="tv" />
+            <BrowseTmdb media_type="tv" />
           </>
         )}
       </AnimatePresence>

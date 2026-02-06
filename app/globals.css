@@ -183,6 +183,10 @@ video::cue {
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
+  .custom-scrollbar::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+
   .custom-scrollbar::-webkit-scrollbar-track {
     background: var(--background);
     border-radius: 4px;

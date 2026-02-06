@@ -8,6 +8,7 @@ import {
   Home,
   Settings,
   SquareMousePointer,
+  Telescope,
   Tv,
 } from "lucide-react";
 import {
@@ -78,46 +79,109 @@ export default function NavBar() {
                 <ChevronDown className="size-4" />
               </button>
             </PopoverTrigger>
-            <PopoverContent className="mt-2 bg-background border-none">
-              <PopoverHeader>
-                <PopoverTitle>Browse</PopoverTitle>
-                <PopoverDescription>
-                  Discover movies, TV shows, and manage your watchlist in one
-                  place.
+            <PopoverContent className="mt-2 bg-background/80 backdrop-blur-md shadow-lg w-72 ">
+              <PopoverHeader className="pb-3 border-b">
+                <PopoverTitle className="text-lg font-bold">
+                  Browse
+                </PopoverTitle>
+                <PopoverDescription className="">
+                  Discover and manage your content
                 </PopoverDescription>
               </PopoverHeader>
-              <div className="grid grid-cols-2 gap-2 mt-4 text-muted-foreground">
+
+              <div className="py-2 space-y-1">
                 <Link
                   href="/movie"
-                  className={`border rounded-md p-3 ${pathname === "/movie" ? "text-foreground font-semibold" : ""}`}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all duration-200 ${
+                    pathname === "/movie"
+                      ? "bg-linear-to-r from-muted to-muted/10 text-foreground shadow-sm"
+                      : "hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <Film />
-                  <p className="text-sm font-medium mt-1.5">Movie</p>
+                  <Film className="w-5 h-5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-base font-semibold">Movies</p>
+                    <p className="text-sm opacity-70">Browse all movies</p>
+                  </div>
                 </Link>
+
                 <Link
                   href="/tv"
-                  className={`border rounded-md p-3 ${pathname === "/tv" ? "text-foreground font-semibold" : ""}`}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all duration-200 ${
+                    pathname === "/tv"
+                      ? "bg-linear-to-r from-muted to-muted/10 text-foreground shadow-sm"
+                      : "hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <Tv />
-                  <p className="text-sm font-medium mt-1.5">TV Show</p>
+                  <Tv className="w-5 h-5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-base font-semibold">TV Shows</p>
+                    <p className="text-sm opacity-70">Browse all series</p>
+                  </div>
                 </Link>
+
+                <Link
+                  href="/collection"
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all duration-200 ${
+                    pathname === "/collection"
+                      ? "bg-linear-to-r from-muted to-muted/10 text-foreground shadow-sm"
+                      : "hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Tv className="w-5 h-5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-base font-semibold">Collections</p>
+                    <p className="text-sm opacity-70">Curated collections</p>
+                  </div>
+                </Link>
+
+                <div className="h-px bg-border my-2" />
+
                 <Link
                   href="/watchlist"
-                  className={`border rounded-md p-3 ${pathname === "/watchlist" ? "text-foreground font-semibold" : ""}`}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all duration-200 ${
+                    pathname === "/watchlist"
+                      ? "bg-linear-to-r from-muted to-muted/10 text-foreground shadow-sm"
+                      : "hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <Bookmark />
-                  <p className="text-sm font-medium mt-1.5">Watchlist</p>
+                  <Bookmark className="w-5 h-5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-base font-semibold">Watchlist</p>
+                    <p className="text-sm opacity-70">Saved for later</p>
+                  </div>
                 </Link>
+
                 <Link
                   href="/history"
-                  className={`border rounded-md p-3 ${pathname === "/history" ? "text-foreground font-semibold" : ""}`}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all duration-200 ${
+                    pathname === "/history"
+                      ? "bg-linear-to-r from-muted to-muted/10 text-foreground shadow-sm"
+                      : "hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <GalleryVerticalEnd />
-                  <p className="text-sm font-medium mt-1.5">History</p>
+                  <GalleryVerticalEnd className="w-5 h-5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-base font-semibold">History</p>
+                    <p className="text-sm opacity-70">Recently watched</p>
+                  </div>
                 </Link>
               </div>
             </PopoverContent>
           </Popover>{" "}
+          <button
+            className={
+              pathname === "/explore" ? "text-foreground font-semibold" : ""
+            }
+          >
+            <Link
+              className={`hidden items-center gap-1.5 xl:flex`}
+              href="/explore"
+            >
+              <Telescope className="size-5" />
+              <span className=" font-medium">Explore</span>
+            </Link>
+          </button>
           <button>
             <Link
               className={`hidden items-center gap-1.5 xl:flex`}

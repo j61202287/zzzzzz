@@ -80,8 +80,8 @@ export default function LandingContent({
 
   return (
     <div
-      className={`relative overflow-hidden bg-background transition-[max-height] duration-300 ease-out lg:h-[calc(100vh-125px)] h-[70vh]
-    ${isSearching ? "max-h-0" : "lg:max-h-[calc(100vh-125px)] max-h-[70vh]"}`}
+      className={`relative overflow-hidden bg-background transition-[max-height] duration-300 ease-out lg:h-screen h-[70vh]
+    ${isSearching ? "max-h-0" : "lg:max-h-screen max-h-[70vh]"}`}
     >
       <AnimatePresence>
         {isActive && (

@@ -66,14 +66,14 @@ export default function MovieCard({
         <div className="mt-2">
           {/* Title */}
           {(style === "title" || style === "title-year") && (
-            <h1 className="lg:text-sm text-xs font-normal truncate">
+            <h1 className="lg:text-base text-sm font-normal truncate">
               {movie.title ?? movie.name}
             </h1>
           )}
 
           {/* Year + rating */}
           {style === "title-year" && (
-            <p className="text-xs text-muted-foreground">
+            <p className="lg:text-sm text-xs text-muted-foreground">
               {year}
               {movie.vote_average && ` • ${movie.vote_average.toFixed(1)} ★`}
             </p>
