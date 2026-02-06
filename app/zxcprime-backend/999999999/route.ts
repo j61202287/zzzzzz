@@ -50,6 +50,7 @@ export async function GET(req: NextRequest) {
     }
 
     // -------- MovieBox Logic --------
+    const ip = africanLikeIP();
     const host = "h5.aoneroom.com";
     const baseUrl = `https://${host}`;
     const headers: Record<string, string> = {
@@ -57,12 +58,13 @@ export async function GET(req: NextRequest) {
       "Accept-Language": "en-US,en;q=0.5",
       Accept: "application/json",
       "User-Agent": "okhttp/4.12.0",
-      Referer: "https://movieboxapp.in",
-      "X-Forwarded-For": "197.178.200.45",
-      "CF-Connecting-IP": "197.178.200.45",
-      "X-Real-IP": "197.178.200.45",
+      Referer:
+        "https://fmoviesunblocked.net/spa/videoPlayPage/movies/the-housemaid-0salyuvbRw2?id=2123398053372510440&type=/movie/detail",
+      "X-Forwarded-For": ip,
+      "CF-Connecting-IP": ip,
+      "X-Real-IP": ip,
+      Origin: "https://fmoviesunblocked.net",
     };
-
     // Search for movie/TV show
     const searchRes = await fetch(
       `${baseUrl}/wefeed-h5-bff/web/subject/search`,
@@ -157,4 +159,13 @@ export async function GET(req: NextRequest) {
       { status: 500 },
     );
   }
+}
+function africanLikeIP() {
+  const firstOctets = [41, 102, 105, 154, 160, 165, 196];
+  return [
+    firstOctets[Math.floor(Math.random() * firstOctets.length)],
+    Math.floor(Math.random() * 256),
+    Math.floor(Math.random() * 256),
+    Math.floor(Math.random() * 256),
+  ].join(".");
 }
