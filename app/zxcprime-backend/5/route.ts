@@ -38,15 +38,17 @@ export async function GET(req: NextRequest) {
     if (
       !referer.includes("/api/") &&
       !referer.includes("localhost") &&
-      !referer.includes("http://192.168.1.6:3000/") &&
-      !referer.includes("https://www.zxcprime.icu/")
+      !referer.includes("http://192.168.1.4:3000/") &&
+      !referer.includes("https://www.zxcprime.icu/") &&
+      !referer.includes("https://zxcprime.icu/") &&
+      !referer.includes("https://www.zxcprime.site/") &&
+      !referer.includes("https://zxcprime.site/")
     ) {
       return NextResponse.json(
         { success: false, error: "Forbidden" },
         { status: 403 },
       );
     }
-
     const pathLink = `https://enc-dec.app/api/enc-vidlink?text=${id}`;
 
     const pathLinkResponse = await fetchWithTimeout(
@@ -115,7 +117,7 @@ export async function GET(req: NextRequest) {
       `https://blue-hat-477a.jerometecson333.workers.dev`,
 
       `https://square-darkness-1efb.amenohabakiri174.workers.dev`,
-    
+
       `https://long-frog-ec4e.coupdegrace21799.workers.dev`,
 
       `https://dark-scene-567a.jinluxuz.workers.dev`,

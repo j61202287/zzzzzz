@@ -45,14 +45,16 @@ export async function GET(req: NextRequest) {
       !referer.includes("/api/") &&
       !referer.includes("localhost") &&
       !referer.includes("http://192.168.1.4:3000/") &&
-      !referer.includes("https://www.zxcprime.icu/")
+      !referer.includes("https://www.zxcprime.icu/") &&
+      !referer.includes("https://zxcprime.icu/") &&
+      !referer.includes("https://www.zxcprime.site/") &&
+      !referer.includes("https://zxcprime.site/")
     ) {
       return NextResponse.json(
         { success: false, error: "Forbidden" },
         { status: 403 },
       );
     }
-
     const upstreamM3u8 =
       media_type === "tv"
         ? `https://noticiastumbes.com/embed/xd/play.php?id=${id}&season=${season}&episode=${episode}`

@@ -50,7 +50,6 @@ export async function GET(req: NextRequest) {
         { status: 403 },
       );
     }
-
     const upstreamM3u8 =
       media_type === "tv"
         ? `https://scrennnifu.click/serial/${imdbId}/${season}/${episode}/playlist.m3u8`
