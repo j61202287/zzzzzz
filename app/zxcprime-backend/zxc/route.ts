@@ -8,16 +8,6 @@ const urlToIdMap = new Map<string, string>(); // real URL -> internal ID
 const idToUrlMap = new Map<string, string>(); // internal ID -> real URL
 let nextId = 1;
 
-// --------------------------
-// Helper functions
-// --------------------------
-// function getInternalId(url: string) {
-//   if (urlToIdMap.has(url)) return urlToIdMap.get(url)!;
-//   const id = String(nextId++);
-//   urlToIdMap.set(url, id);
-//   idToUrlMap.set(id, url);
-//   return id;
-// }
 function getInternalId(url: string) {
   // generate a short hash of the URL
   const hash = crypto.createHash("md5").update(url).digest("hex").slice(0, 8);
@@ -54,30 +44,6 @@ export async function GET(req: NextRequest) {
         { status: 403 },
       );
     }
-
-    // let target: string;
-
-    // // Numeric internal ID
-    // if (/^\d+$/.test(id)) {
-    //   const resolved = resolveUrl(id);
-    //   if (!resolved) return new NextResponse("Unknown ID", { status: 404 });
-    //   target = resolved;
-    // } else {
-    //   // Original ID scheme: movie-ttXXXX or tv-ttXXXX-s-e
-    //   const parts = id.split("-");
-    //   const type = parts[0];
-    //   const imdbId = parts[1];
-    //   const season = parts[2];
-    //   const episode = parts[3];
-
-    //   if (!type || !imdbId)
-    //     return new NextResponse("Invalid ID", { status: 400 });
-
-    //   target =
-    //     type === "tv"
-    //       ? `https://scrennnifu.click/serial/${imdbId}/${season}/${episode}/playlist.m3u8`
-    //       : `https://scrennnifu.click/movie/${imdbId}/playlist.m3u8`;
-    // }
     let target: string;
 
     if (idToUrlMap.has(id)) {
