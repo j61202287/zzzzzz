@@ -237,7 +237,6 @@ export default function PlayerSettings({
             </div>
           )} */}
 
-          {/* Subtitle List */}
           {openSub && (
             <div>
               <h1 className="px-3 py-2 text-sm font-medium bg-background">
