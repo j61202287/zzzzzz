@@ -263,6 +263,7 @@ export default function PlayerSettings({
                       setSelectedSub(s.url);
                       setOpenSub(false);
                     }}
+                    flag={s.flagUrl}
                   />
                 ))}
               </div>
