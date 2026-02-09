@@ -7,7 +7,7 @@ import { IMAGE_BASE_URL } from "@/constants/tmdb";
 
 export default function CollectionDetails() {
   const params = useParams();
-  const id = Number(params.id);
+  const id = Number(params.selected_id);
   const { data, isLoading, isError } = useCollectionById({ id });
 
   return (

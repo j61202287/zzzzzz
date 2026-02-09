@@ -206,6 +206,18 @@ export default function ExploreTmdb() {
     settoValue(null);
     setfromValue(null);
   };
+  useEffect(() => {
+    setSelectedGenres(new Set());
+    setSelectedNetwork(null);
+    setSelectedKeywords(new Set());
+    setSelectedYear(null);
+    setSelectedLanguage(null);
+    setMinRating(null);
+    setMaxRating(null);
+    setSelectedSort(null);
+    settoValue(null);
+    setfromValue(null);
+  }, [selectedMedia]);
   const years = Array.from(
     { length: CURRENT_YEAR - 1999 + 1 },
     (_, i) => 1999 + i,

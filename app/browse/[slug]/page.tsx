@@ -17,14 +17,7 @@ import { COMPANIES } from "@/constants/movie-endpoints";
 export default function DiscoverResult() {
   const params = useParams();
   const slug = params.slug;
-  console.log("slug", slug);
   const density = useLayoutDensity((state) => state.density);
-  const router = useRouter();
-  const handleCloseDrawer = (value: boolean) => {
-    if (!value) {
-      setTimeout(() => router.back(), 300);
-    }
-  };
   const { ref, inView } = useInView({
     threshold: 0.3,
   });
@@ -93,6 +86,7 @@ export default function DiscoverResult() {
           </div>
         </div>
       )}
+      <ScrollToTop />
     </div>
   );
 }
