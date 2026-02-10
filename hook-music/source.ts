@@ -38,7 +38,7 @@ export default function useMusicSource({ id }: { id: number | null }) {
     queryKey: ["search-title-music-source", id],
     enabled: !!id,
     queryFn: async () => {
-      const url = `https://katze.qqdl.site/track/?id=${id}&quality=HI_RES_LOSSLESS`;
+      const url = `api/music/source?id=${id}`;
 
       try {
         const res = await axios.get(url);

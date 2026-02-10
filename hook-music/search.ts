@@ -91,8 +91,7 @@ export default function useMusicSearch({ search }: { search: string }) {
     queryKey: ["search-title-music", debounced],
     enabled: !!debounced,
     queryFn: async () => {
-      const url = `
-https://tidal-api.binimum.org/search/?s=${debounced}`;
+      const url = `api/music/search/?search=${debounced}`;
 
       try {
         const res = await axios.get(url);
