@@ -51,8 +51,8 @@ export default function MusicSearch() {
             <div>
               <div className="font-medium">
                 {m.title}
-                <span className="ml-5 text-muted-foreground italic">
-                  {id === m.id && ` - Playing`}
+                <span className="text-muted-foreground italic">
+                  {id === m.id && `  -  Playing`}
                 </span>
               </div>
               <div className="text-sm text-muted-foreground">
