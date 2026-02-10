@@ -1,5 +1,6 @@
 import logo from "@/assets/zxczxc.svg";
 import {
+  Activity,
   Bookmark,
   ChevronDown,
   Chromium,
@@ -180,6 +181,20 @@ export default function NavBar() {
             >
               <Telescope className="size-5" />
               <span className=" font-medium">Explore</span>
+            </Link>
+          </button>
+          <button
+            className={`relative ${pathname === "/music" ? "text-foreground font-semibold" : ""}`}
+          >
+            <Link
+              className={`hidden items-center gap-1.5 xl:flex`}
+              href="/music"
+            >
+              <Activity className="size-5" />
+              <span className=" font-medium">Music</span>
+              <span className="absolute -bottom-5 right-2 text-[10px] tracking-widest font-medium bg-background/80 py-0.5 px-1 rounded-sm">
+                BETA
+              </span>
             </Link>
           </button>
           <button>
