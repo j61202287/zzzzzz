@@ -8,13 +8,23 @@ import AudioPlayer from "./dash";
 
 export default function MusicSearch() {
   const [search, setSearch] = useState("");
-  const [id, setId] = useState<number | null>(null);
+  const [playing, setPlaying] = useState<{
+    id: number | null;
+    title: string | null;
+    artist: string | null;
+    cover: string | null;
+  }>({
+    id: null,
+    title: null,
+    artist: null,
+    cover: null,
+  });
 
   const { data: search_result } = useMusicSearch({ search });
-  const { data: source, isLoading } = useMusicSource({ id });
+  const { data: source, isLoading } = useMusicSource({ id: playing.id });
 
   return (
-    <div className="py-30 w-[85%] mx-auto">
+    <div className="relative py-30 lg:w-[85%] w-[95%] mx-auto">
       <Input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -23,20 +33,30 @@ export default function MusicSearch() {
 
       {/* Player */}
       {source?.data?.manifest && (
-        <div className="fixed bottom-0 inset-x-0 py-8 px-8 bg-background/80 backdrop-blur-lg">
-          <AudioPlayer
-            manifestBase64={source.data.manifest}
-            manifestMimeType={source.data.manifestMimeType}
-          />
-        </div>
+        <AudioPlayer
+          manifestBase64={source.data.manifest}
+          manifestMimeType={source.data.manifestMimeType}
+          title={playing.title}
+          artist={playing.artist}
+          cover={playing.cover}
+        />
       )}
 
       {/* Results */}
-      <div className="divide-y mt-10">
+      <div className="divide-y mt-10 grid grid-cols-2">
         {search_result?.data.items.map((m) => (
           <button
             key={m.id}
-            onClick={() => setId(m.id)}
+            onClick={() => {
+              setPlaying({
+                id: m.id,
+                title: m.title,
+                artist: m.artist.name,
+                cover: m.album.cover
+                  ? `https://resources.tidal.com/images/${m.album.cover.replace(/-/g, "/")}/320x320.jpg`
+                  : null,
+              });
+            }}
             className="py-4 w-full text-left hover:bg-muted px-2 rounded flex items-end gap-3"
           >
             {m.album.cover && (
@@ -52,7 +72,7 @@ export default function MusicSearch() {
               <div className="font-medium">
                 {m.title}
                 <span className="text-muted-foreground italic">
-                  {id === m.id && `  -  Playing`}
+                  {playing.id === m.id && `  -  Playing`}
                 </span>
               </div>
               <div className="text-sm text-muted-foreground">
